@@ -1,0 +1,11 @@
+div.message.warning {
+  background-color: #C3AF23;
+  border-color: #C3AF23;
+  color: #FFF;
+}
+
+div.message.info {
+  background-color: #2392C3;
+  border-color: #2392C3;
+  color: #FFF;
+}

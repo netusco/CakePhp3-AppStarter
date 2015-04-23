@@ -1,0 +1,33 @@
+# User specific & automatically generated files #
+#################################################
+/tmp/*
+/logs/*
+/webroot/.sass-cache
+/webroot/photocrops/*
+/webroot/img/blog/*
+# I don't exclude plugins folder as I have personal plugins not maintained by composer
+# To exclude other plugins maintained by composer add the specific route to their folders below.
+/vendor/*
+/build
+/dist
+/tags
+*.mo
+*.log
+*.htaccess
+*.orig
+
+# IDE and editor specific files #
+#################################
+/nbproject
+.idea
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db

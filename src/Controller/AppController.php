@@ -1,0 +1,98 @@
+<?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link      http://cakephp.org CakePHP(tm) Project
+ * @since     0.2.9
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+namespace App\Controller;
+
+use Cake\Controller\Controller;
+
+/**
+ * Application Controller
+ *
+ * Add your application-wide methods in the class below, your controllers
+ * will inherit them.
+ *
+ * @link http://book.cakephp.org/3.0/en/controllers.html#the-app-controller
+ */
+class AppController extends Controller
+{
+
+    public $helpers = ['Form', 'Html', 'Time'];
+
+    /**
+     * Initialization hook method.
+     *
+     * Use this method to add common initialization code like loading components.
+     *
+     * @return void
+     */
+    public function initialize()
+    {
+        $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authorize' => 'Controller',
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            // used for non authorized actions (not logged, not admin, etc)
+            'loginAction' => [
+                'plugin' => false,
+                'controller' => 'Users',
+                'action' => 'login',
+                'prefix' => false
+            ],
+            // default is referer and in case of no referer loginRedirect (after login)
+            'loginRedirect' => [
+                'controller' => 'Users',
+                'action' => 'dashboard',
+                'prefix' => false
+            ],
+            'logoutRedirect' => '/',
+            'authError' => "Vous n'êtes pas autorisé à accéder à cet emplacement."
+        ]);
+        $this->loadComponent('Ownership', [
+            'url' => 'referer',
+            'message' => "Vous n'êtes pas autorisé à accéder à cet emplacement."
+        ]);
+
+        // Allow the display action so our pages controller
+        // continues to work.
+        $this->Auth->allow(['display']);
+    }
+    
+    /**
+     * Check if user is authorized
+     * 
+     * @param array $user
+     * @return bool
+     */
+    public function isAuthorized($user)
+    {
+
+        // Any registered user can access public functions
+        if (empty($this->request->params['prefix'])) {
+            return true;
+        }
+        
+        // Only admins can access admin functions
+        if ($this->request->params['prefix'] === 'admin') {
+            return (bool)($user['role'] === 'admin' || $user['role'] === 'superadmin');
+        }
+    }
+    
+}
