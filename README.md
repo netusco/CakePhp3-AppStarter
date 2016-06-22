@@ -14,8 +14,8 @@ This software is registered under the MIT license. Copyright(c) 2015 - Ernest Co
 
 ## Installation
 
-1. If it's the first time run on the console from root: php composer.phar install --prefer-dist
-1b. If it's a pull from origin then just update: php composer.phar update --prefer-dist
+1. If it's the first time run on the console from root: `php composer.phar install --prefer-dist`
+1b. If it's a pull from origin then just update: `php composer.phar update --prefer-dist`
 
 You should now be able to see the vendors folder filled with the repositories of the modules needed.
 
