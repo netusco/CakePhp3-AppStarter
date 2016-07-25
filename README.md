@@ -14,18 +14,14 @@ This software is registered under the MIT license. Copyright(c) 2015 - Ernest Co
 
 ## Installation
 
-1. If it's the first time run on the console from root: php composer.phar install --prefer-dist
-1b. If it's a pull from origin then just update: php composer.phar update --prefer-dist
-
-You should now be able to see the vendors folder filled with the repositories of the modules needed.
-
+1. If it's the first time run on the console from root: `php composer.phar install --prefer-dist`. If it's a pull from origin then just update: `php composer.phar update --prefer-dist`. You should now be able to see the vendors folder filled with the repositories of the modules needed.
 [more info](http://book.cakephp.org/3.0/en/installation.html)
 
-2. Create database 'app_starter' and add the tables found in config/schema/app_starter
+2. Create database `app_starter` and add the tables found in `config/schema/app_starter`
 3. To be able to use the methods that send Emails without an error you should install an email server.
 I've installed ssmtp server on my ubuntu 14 (see Anexes for instructions).
-The email given to the ssmtp (or other) email server should be changed in config/bootstrap_specific.php
-4. To be able to use the ChartJs plugin actualised you should run git submodule init and then git submodule update
+The email given to the ssmtp (or other) email server should be changed in `config/bootstrap_specific.php`
+4. To be able to use the ChartJs plugin actualised you should run `git submodule init` and then `git submodule update`
 
 ### Reporting Issues
 
@@ -35,9 +31,9 @@ If you have a problem with this plugin please open an issue.
 
 I'm not actively maintaining this plugin, but it's open for community contributions.
 
-# Documentation 
- 
-## Running the app 
+# Documentation
+
+## Running the app
 
 * To run the app type `bin/cake server` on the console and you should see the app running on your browser at http://localhost:8765/
 
@@ -49,27 +45,27 @@ configuration relevant for your application.
 The file config/bootstrap_specific.php contains configuration personal to each local environment.
 
 
-## Baking 
+## Baking
 
 To bake Controllers, Models, Tests, etc... user bin/cake bake
 For tests bin/cake bake test <type> <name>
 
 
-## Testing 
+## Testing
 
 To run all tests type `vendor/bin/phpunit`
 To run particular tests add the test case url behind like: `vendor/bin/phpunit tests/TestCase/Model/Table/ArticlesTableTest`
 To run a subset of test methods do it this way: `vendor/bin/phpunit --filter testSave tests/TestCase/Model/Table/ArticlesTableTest`
-You can generate code coverage reports from the command line using PHPUnit’s built-in code coverage tools. 
+You can generate code coverage reports from the command line using PHPUnit’s built-in code coverage tools.
 `vendor/bin/phpunit --coverage-html webroot/coverage tests/TestCase/Model/Table/ArticlesTableTest`
-This will put the coverage results in your application’s webroot directory. 
+This will put the coverage results in your application’s webroot directory.
 You should be able to view the results by going to http://localhost/your_app/coverage.
 
 If you run into problems with email errors read the 3rd point of ## Installation
 
 TIP: you can use `debug($var)` within tests ;)
 
-## Anexes 
+## Anexes
 
 1. Installing ssmtp for Ubuntu:
 
