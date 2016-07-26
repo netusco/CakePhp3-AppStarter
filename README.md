@@ -14,17 +14,12 @@ This software is registered under the MIT license. Copyright(c) 2015 - Ernest Co
 
 ## Installation
 
-1. If it's the first time run on the console from root: `php composer.phar install --prefer-dist`
-1b. If it's a pull from origin then just update: `php composer.phar update --prefer-dist`
+1. If it's the first time run on the console from root: `php composer.phar install --prefer-dist`. If it's a pull from origin then just update: `php composer.phar update --prefer-dist`. You should now be able to see the vendors folder filled with the repositories of the modules needed. [more info](http://book.cakephp.org/3.0/en/installation.html)
 
-You should now be able to see the vendors folder filled with the repositories of the modules needed.
-
-[more info](http://book.cakephp.org/3.0/en/installation.html)
-
-2. Create database 'app_starter' and add the tables found in config/schema/app_starter
+2. Create database `app_starter` and add the tables found in `config/schema/app_starter`
 3. To be able to use the methods that send Emails without an error you should install an email server.
 I've installed ssmtp server on my ubuntu 14 (see Anexes for instructions).
-The email given to the ssmtp (or other) email server should be changed in config/bootstrap_specific.php
+The email given to the ssmtp (or other) email server should be changed in `config/bootstrap_specific.php`
 4. To be able to use the ChartJs plugin actualised you should run git submodule init and then git submodule update
 
 ### Reporting Issues
@@ -46,13 +41,13 @@ I'm not actively maintaining this plugin, but it's open for community contributi
 Read and edit `config/app.php` and setup the 'Datasources' and any other
 configuration relevant for your application.
 
-The file config/bootstrap_specific.php contains configuration personal to each local environment.
+The file `config/bootstrap_specific.php` contains configuration personal to each local environment.
 
 
 ## Baking 
 
-To bake Controllers, Models, Tests, etc... user bin/cake bake
-For tests bin/cake bake test <type> <name>
+To bake Controllers, Models, Tests, etc... user `bin/cake bake`
+For tests `bin/cake bake test <type> <name>`
 
 
 ## Testing 
