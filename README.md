@@ -14,18 +14,24 @@ This software is registered under the MIT license. Copyright(c) 2015 - Ernest Co
 
 ## Installation
 
-1. If it's the first time run on the console from root: php composer.phar install --prefer-dist
-1b. If it's a pull from origin then just update: php composer.phar update --prefer-dist
+1. Install all required libraries via composer:
 
-You should now be able to see the vendors folder filled with the repositories of the modules needed.
+   NOTE: Composer installation will probably return error if you don't create **tmp** and **logs** folder in the root directory.
 
-[more info](http://book.cakephp.org/3.0/en/installation.html)
+  * If it's the first time run on the console from root: php composer.phar install --prefer-dist
+  * If it's a pull from origin then just update: php composer.phar update --prefer-dist
+
+   You should now be able to see the vendors folder filled with the repositories of the modules needed. [more info](http://book.cakephp.org/3.0/en/installation.html)
 
 2. Create database 'app_starter' and add the tables found in config/schema/app_starter
-3. To be able to use the methods that send Emails without an error you should install an email server.
-I've installed ssmtp server on my ubuntu 14 (see Anexes for instructions).
-The email given to the ssmtp (or other) email server should be changed in config/bootstrap_specific.php
-4. To be able to use the ChartJs plugin actualised you should run git submodule init and then git submodule update
+3. Install PhotoCrop plugin via git submodule
+  * git submodule init
+  * git submodule update
+4. To be able to use the methods that send Emails without an error you should install an email server.
+
+   I've installed ssmtp server on my ubuntu 14 (see Anexes for instructions). The email given to the ssmtp (or other) email server should be changed in config/bootstrap_specific.php
+
+5. To be able to use the ChartJs plugin actualised you should run git submodule init and then git submodule update
 
 ### Reporting Issues
 

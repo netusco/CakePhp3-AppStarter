@@ -1,0 +1,3 @@
+[submodule "plugins/PhotoCrop"]
+	path = plugins/PhotoCrop
+	url = https://github.com/netusco/CakePhp3-PhotoCrop.git
